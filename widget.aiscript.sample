@@ -2,7 +2,7 @@
 
 @renderView() {
   let pageData = Mk:api('pages/show', {
-    pageId: 'aetaohnqecw7037k'
+    pageId: 'YOUR_PAGE_ID'
   })
 
   let postText = pageData.content[0].text
