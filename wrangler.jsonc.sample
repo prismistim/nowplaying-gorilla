@@ -44,5 +44,12 @@
 		"crons": [
 			"* * * * *"
 		]
-	}
+	},
+	"kv_namespaces": [
+		{
+			"binding": "nowplaying_gorilla",
+			"id": "",
+			"remote": true
+		}
+	]
 }

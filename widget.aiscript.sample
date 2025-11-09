@@ -1,0 +1,43 @@
+
+
+@renderView() {
+  let pageData = Mk:api('pages/show', {
+    pageId: 'aetaohnqecw7037k'
+  })
+
+  let postText = pageData.content[0].text
+
+  // ウィジェットのUIを構築
+  Ui:render([
+		Ui:C:container({
+			children: [
+				Ui:C:text({ text: postText }),
+				Ui:C:postFormButton({
+					text: '投稿する'
+					rounded: true
+					primary: true
+					form: {
+						text: `{postText} #nowplaying`
+					}
+				}),
+				Ui:C:button({
+					text: "再取得",
+					onClick: @() {
+						renderView()
+					}
+				})
+			],
+			align: 'center' // 幅寄せ left,center,right
+			padding: 1 // 余白幅
+			rounded: true // 角を丸く
+			borderRadius: 1 // 角を丸く（丸みの度合いを数値指定）
+			hidden: false // 隠す
+  	})
+	])
+}
+
+@main() {
+	renderView()
+}
+
+main()
